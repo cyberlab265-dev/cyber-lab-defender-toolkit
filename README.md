@@ -1,62 +1,35 @@
 # 🛡️ Cyber-Lab Defender Toolkit
+
 Built in Lilongwe, Malawi | Level 2 Graduation Project
 
 > From learning how hackers try 1000 passwords, to building the tools that BLOCK them.
 
 ## 👨‍💻 About Me
-**John Phiri** - Aspiring SOC Analyst & White Hat Defender
-Lilongwe, Malawi | September 2026
 
-I built this toolkit in my cyber-lab to understand and defend against real-world attacks.
+**John Phiri** - Aspiring SOC Analyst & White Hat Hacker
+Location: Lilongwe, Malawi 🇲🇼
+HackerOne: @cyberlab265
 
-## 🧰 Tools Included
+Learning cybersecurity by building defender tools, not attacker tools.
 
-### 1. `dashboard.py` - Security Dashboard (Level 1)
-My first SOC dashboard. Shows live system health.
+## 🛠️ Tools in this Toolkit
 
-### 2. `wifi_watcher.py` - WiFi Intruder Detector (Level 2 - Day 7)
-Scans YOUR network only and lists all devices.
-- Detects unknown devices stealing WiFi
-- Uses ARP table analysis
-- 100% white-hat, defensive only
+### 1. `password_checker.py`
+Checks if password is weak or strong. Prevents weak passwords that brute-force exploits.
 
-**How to run:** `python3 wifi_watcher.py`
+### 2. `login_guard.py`
+Blocks brute-force attack after 5 failed attempts.
+- Blocks IP
+- Shows CAPTCHA logic
+- Returns 429
 
-### 3. `login_guard.py` - Brute Force Blocker (Level 2 - Day 8)
-This tool PROVES why 1000 password tries fail.
-- Locks account after 5 failed attempts
-- Same logic used by Facebook, Google, banks
-- This is how we stop brute force attacks
+This is the fix for the bug I found in the wild!
 
-**How to run:** `python3 login_guard.py`
-> Try 5 wrong passwords -> See `ACCOUNT LOCKED FOR 10 MINUTES!`
-
-### 4. `vault.py` - File Vault Encryption (Level 2 - Day 9) ⭐
-Encrypts secret files before sending on WhatsApp.
+### 3. `vault.py`
+Simple password vault for education.
 - LOCK with password -> creates `vault.locked`
 - UNLOCK only with correct password
 - Tested: Wrong password = ❌ Wrong password!
 - Correct password = 🔓 UNLOCKED: my saraly is 5M lilongwe
 
-**How to run:**
-```bash
-python3 vault.py
-# Choose 1 = LOCK, 2 = UNLOCK
-
----
-## 🔍 Real-World Security Research (September 2026)
-
-**Report #4054630 - Semtech VDP - HackerOne @cyberlab265**
-
-- **Finding:** Missing Rate Limiting on auth.airvantage.net/u/login/password
-- **Asset:** *.airvantage.net (in-scope)
-- **Impact:** Brute-force & credential stuffing -> account takeover
-- **Status:** Submitted (New/Open) - Responsible Disclosure
-
-> This finding validates why I built `login_guard.py` - this real company was missing it!
-
-**Connection to my tools:**
-- `login_guard.py` = The fix for this exact bug (blocks after 5 fails)
-- Semtech had NO guard, I proved it with test@test.com (6+ tries, no block)
-
-**Ethics:** Tested only in public VDP scope, test accounts only.
+How to run:
